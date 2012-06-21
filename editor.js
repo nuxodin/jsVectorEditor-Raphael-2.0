@@ -102,19 +102,19 @@ function VectorEditor(elem, width, height){
         //this.lastmode = this.mode;
         this.setMode("select") //tempselect
       }
-      this.onMouseDown(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+      this.onMouseDown(event.pageX - offset()[0], event.pageY - offset()[1], event.target)
     }, this));
     $(elem).mousemove(bind(function(event){
       event.preventDefault()
-      this.onMouseMove(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+      this.onMouseMove(event.pageX - offset()[0], event.pageY - offset()[1], event.target)
     }, this));
     $(elem).mouseup(bind(function(event){
       event.preventDefault()
-      this.onMouseUp(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+      this.onMouseUp(event.pageX - offset()[0], event.pageY - offset()[1], event.target)
     }, this));
     $(elem).dblclick(bind(function(event){
       event.preventDefault()
-      this.onDblClick(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+      this.onDblClick(event.pageX - offset()[0], event.pageY - offset()[1], event.target)
     }, this));
     if(mobilesafari){
     elem.addEventListener("touchstart", bind(function(event){
