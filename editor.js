@@ -44,17 +44,8 @@ function VectorEditor(elem, width, height){
   //THE FOLLOWING LINES ARE MOSTLY POINTLESS!
   
   function offset(){
-    //technically, vX.pos works too and I should probably use whatever I built here, but I have jQuery instead.
-    if(window.Ext)return Ext.get(elem).getXY();
-    if(window.jQuery){
-      var pos = jQuery(elem).offset();
+	  var pos = $(elem).offset();
       return [pos.left, pos.top];
-    }
-    if(window.vx){ //vx support
-      var pos = vx.pos(elem);
-      return [pos.l, pos.t];
-    }
-    return [0,0];
   }
   
   function bind(fn, scope){
